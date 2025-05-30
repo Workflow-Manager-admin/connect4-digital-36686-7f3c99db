@@ -80,9 +80,6 @@ function Connect4Container({ columns = COLS, rows = ROWS }: Connect4Props) {
     animationLock.current = true;
     setIsAnimating(true);
 
-    let currRow = 0;
-    const steps: number[] = Array.from({ length: targetRow + 1 }, (_v, k) => k);
-
     // Helper to animate cell-by-cell
     function stepAnim(idx: number) {
       setAnimatedCells((prev) => {
@@ -166,12 +163,12 @@ function Connect4Container({ columns = COLS, rows = ROWS }: Connect4Props) {
 
   // --- Render ---
   function renderCell(row: number, col: number) {
-    let cellPlayer = board[row][col];
+    const cellPlayer = board[row][col];
     // Prefer animated disc if exists
     const anim = animatedCells[row][col];
-    let showAnim = anim && anim.isDropping && anim.player != null;
+    const showAnim = anim && anim.isDropping && anim.player != null;
 
-    let discColor =
+    const discColor =
       cellPlayer === 1
         ? COLORS.player1
         : cellPlayer === 2
@@ -305,7 +302,7 @@ function Connect4Container({ columns = COLS, rows = ROWS }: Connect4Props) {
             ? (
                 <span>
                   <span role="img" aria-label="Draw" className="mr-1">🤝</span>
-                  It's a draw!
+                  It&apos;s a draw!
                 </span>
               )
             : winner ? (
@@ -333,7 +330,7 @@ function Connect4Container({ columns = COLS, rows = ROWS }: Connect4Props) {
                           : COLORS.player2,
                     }}
                   />
-                  Player {currentPlayer}'s turn
+                  Player {currentPlayer}&apos;s turn
                 </span>
               )}
         </div>
