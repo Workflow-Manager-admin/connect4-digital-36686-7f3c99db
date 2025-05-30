@@ -1,9 +1,5 @@
-import dynamic from "next/dynamic";
-
-// Use dynamic import with ssr: false for 'use client' in Connect4Container
-const Connect4Container = dynamic(() => import("./Connect4Container"), {
-  ssr: false,
-});
+"use client";
+import Connect4Container from "./Connect4Container";
 
 export default function Home() {
   return <Connect4Container />;
