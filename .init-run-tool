@@ -1,0 +1,4 @@
+{
+    "command": "npm run dev -- -p <port>",
+    "working_directory": "/home/kavia/workspace/code-generation/connect4-digital-36686-7f3c99db/connect4_digital"
+}
